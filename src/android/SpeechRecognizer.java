@@ -68,6 +68,7 @@ public class SpeechRecognizer extends CordovaPlugin {
 			// Start the recognition process
 			recognizerIntent= new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 			recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, maxResults);
+			recognizerIntent.putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true);
 			if( promptMessage != null )
 				recognizerIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, promptMessage);
 			cordova.startActivityForResult(this, recognizerIntent, REQUEST_CODE);
